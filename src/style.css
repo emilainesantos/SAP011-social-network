@@ -24,7 +24,7 @@ footer {
   height: 5rem; 
   background: linear-gradient(to top, #FFFFFF 0%, #1B481A 10%);
   display: flex;
-  align-items: center;
+  align-items:center;
   flex-direction: column;
   color: rgb(235, 223, 223) ;
   padding: 15px 50px 100px 50px

@@ -51,6 +51,3 @@ export const feed = () => {
 };
 
 
-/* logica 
-
-CRIAR UM */
