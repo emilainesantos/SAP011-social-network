@@ -18,7 +18,12 @@
  }
 
  .container-pai {
+  justify-content: center;
   background: red;
+  width: 400px;
+  align-items: center;
+  padding: 20px 120px 20px 20px;
+  margin: 50px 50px;
  }
 
 .container {
