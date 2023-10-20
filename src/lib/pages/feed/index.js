@@ -1,16 +1,11 @@
 import iconFeed from '../../../Imagens/Img feed/rede comentarios.png';
 import iconNoticias from '../../../Imagens/Img feed/icon.noticias.png';
 import iconArtigos from '../../../Imagens/Img feed/artigo 1.png';
-<<<<<<< HEAD
 import iconEnviar from '../../../Imagens/Img feed/icon-enviarposter.png'
 
 import { readPosts } from '../../../firebase/firestore';
 
 import './feed.css';
-=======
-import iconEnviar from '../../../Imagens/Img feed/icon-enviarposter.png';
-
->>>>>>> 0e6261594dd7ffd06b776b9a5d6a3afb66cf7c1c
 
 
 
@@ -18,25 +13,22 @@ export const feed = () => {
   const container = document.createElement("section");
   container.innerHTML = `
         
-        <div class="container">
+      <div class="container">
           <img class="#" src="${iconFeed}" href="#"></img>       
           <img class="#" src="${iconNoticias}" href="#"></img> 
           <img class="#" src="${iconArtigos}" href="#"></img> 
       </div>
       <div class="container-pai">
-      <div id="input-container">
-       <div><h3>name<h3></div> 
-        <input type="text" name="post" placeholder="publicação" id="post"/>
-        <button id="publish-button" type="button"><img src="${iconEnviar}" alt="Send Button"></button> 
-      </div>
-      <section id="show-container">
-      <div id="post-show"></div>
-      </section>
-<<<<<<< HEAD
+        <div id="input-container">
+          <div><h3>name<h3></div> 
+          <input type="text" name="post" placeholder="publicação" id="post"/>
+          <button id="publish-button" type="button"><img src="${iconEnviar}" alt="Send Button"></button> 
+        </div>
+        <section id="show-container">
+         <div id="post-show"></div>
+        </section>
       </div>
        
-=======
->>>>>>> 0e6261594dd7ffd06b776b9a5d6a3afb66cf7c1c
       `;
 
   let viewPost = container.querySelector("#post-show");
