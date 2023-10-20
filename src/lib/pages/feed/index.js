@@ -1,8 +1,10 @@
 import iconFeed from '../../../Imagens/Img feed/rede comentarios.png';
 import iconNoticias from '../../../Imagens/Img feed/icon.noticias.png';
 import iconArtigos from '../../../Imagens/Img feed/artigo 1.png';
+import iconEnviar from '../../../Imagens/Img feed/icon-enviarposter.png'
 
 import { readPosts } from '../../../firebase/firestore';
+
 import './feed.css';
 
 
@@ -10,6 +12,7 @@ import './feed.css';
 export const feed = () => {
   const container = document.createElement("section");
   container.innerHTML = `
+  <div class="container-pai">
         <div class="container">
           <img class="#" src="${iconFeed}" href="#"></img>       
           <img class="#" src="${iconNoticias}" href="#"></img> 
@@ -25,6 +28,7 @@ export const feed = () => {
       <section id="show-container">
       <div id="post-show"></div>
       </section>
+      </div>
        
       `;
 
