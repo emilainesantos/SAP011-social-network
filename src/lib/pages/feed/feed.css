@@ -3,6 +3,7 @@
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
     box-sizing: border-box; 
+    
 
   }
 
@@ -18,13 +19,15 @@
  }
 
  .container-pai { 
+  
   display: flex;
   flex-direction: column;   
-  background: rgba(11, 185, 19, 0.815);
-  width: 50rem;
+  background: rgba(146, 160, 153, 0.815);
+  width: 60rem;
   align-items: center;  
   padding: 50px 50px 50px 50px;
   gap: 3rem;  
+  margin: 0 auto;
   
  }
 
@@ -46,7 +49,7 @@
     justify-content:center;  
     display: flex;
     padding: 2rem;
-    width: 20rem;
+    width: 50rem;
     gap: 1rem;      
     border-radius: 15px;
     background: #A65D03;
@@ -78,19 +81,7 @@
 
   }
 
-  .inserirPost {
-    /* background: white;
-    height: 50px;
-    border-radius: 50px;*/
-    margin: 50px 50px 20px 50px; 
-    width: 372px;
-    height: 51px;
-    flex-shrink: 0;
-    border-radius: 15px;
-    background: #FFF;
-    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25) inset;
-    backdrop-filter: blur(20px);
-  }
+
 
   
   
