@@ -17,13 +17,15 @@
   
  }
 
- .container-pai {
-  justify-content: center;
-  background: red;
-  width: 400px;
-  align-items: center;
-  padding: 20px 120px 20px 20px;
-  margin: 50px 50px;
+ .container-pai { 
+  display: flex;
+  flex-direction: column;   
+  background: rgba(11, 185, 19, 0.815);
+  width: 50rem;
+  align-items: center;  
+  padding: 50px 50px 50px 50px;
+  gap: 3rem;  
+  
  }
 
 .container {
@@ -35,28 +37,41 @@
   box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(20px);
   
-  
 }
 
+
 #input-container {
+  
     flex-direction: column;
     justify-content:center;  
     display: flex;
-    padding: 60px 40px 40px 20px;
-    width: 372px;
-    height: 280px;
-    flex-shrink: 0;
+    padding: 2rem;
+    width: 20rem;
+    gap: 1rem;      
     border-radius: 15px;
     background: #A65D03;
-    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25) inset;
-    
-
-    
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25) inset;    
   }
 
+  .perfil-containe {
+    
+    background: red;
+    display: flex;     
+    height: 2rem;
+    gap: 2rem;
+      
+  }
+
+  .perfil-containe  img {
+    display: flex;      
+    width: 2rem;
+    background-color: aqua;     
+  }
+
+
   #post {    
-    width: 200px;
-    height: 112px;
+    display: flex;
+    height: 8rem;
     flex-shrink: 0;
     border-radius: 20px;
     background: #BCBF65;

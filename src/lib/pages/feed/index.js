@@ -2,6 +2,11 @@ import iconFeed from '../../../Imagens/Img feed/rede comentarios.png';
 import iconNoticias from '../../../Imagens/Img feed/icon.noticias.png';
 import iconArtigos from '../../../Imagens/Img feed/artigo1.png';
 import iconEnviar from '../../../Imagens/Img feed/icon-enviarposter.png'
+import iconEditar from '../../../Imagens/Img feed/Icone editar.png'
+import iconLixo from '../../../Imagens/Img feed/iconLixo.png'
+import iconProfile from '../../../Imagens/Img feed/imagem-do-usuario-com-fundo-preto.png'
+
+
 
 import { readPosts } from '../../../firebase/firestore';
 
@@ -19,11 +24,21 @@ export const feed = () => {
           <img class="#" src="${iconArtigos}" href="#"></img> 
       </div>
       <div class="container-pai">
+
         <div id="input-container">
-          <div><h3>name<h3></div> 
+          <div class="perfil-containe">
+            
+           
+            <img src="${iconProfile}" alt="perfil"> </img >
+             <h3>Name<h3>
+
+          </div> 
           <input type="text" name="post" placeholder="publicação" id="post"/>
           <button id="publish-button" type="button"><img src="${iconEnviar}" alt="Send Button"></button> 
         </div>
+
+        // recebe os dados do poster
+
         <section id="show-container">
          <div id="post-show"></div>
         </section>
