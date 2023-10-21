@@ -1,6 +1,6 @@
 import iconFeed from '../../../Imagens/Img feed/rede comentarios.png';
 import iconNoticias from '../../../Imagens/Img feed/icon.noticias.png';
-import iconArtigos from '../../../Imagens/Img feed/artigo 1.png';
+import iconArtigos from '../../../Imagens/Img feed/artigo1.png';
 import iconEnviar from '../../../Imagens/Img feed/icon-enviarposter.png'
 
 import { readPosts } from '../../../firebase/firestore';
