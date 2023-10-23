@@ -1,51 +1,59 @@
-import iconFeed from '../../../Imagens/Img feed/rede comentarios.png';
-import iconNoticias from '../../../Imagens/Img feed/icon.noticias.png';
-import iconArtigos from '../../../Imagens/Img feed/artigo 1.png';
-import iconEnviar from '../../../Imagens/Img feed/icon-enviarposter.png'
+import iconFeed from "../../../Imagens/Img feed/rede comentarios.png";
+import iconNoticias from "../../../Imagens/Img feed/icon.noticias.png";
+import iconArtigos from "../../../Imagens/Img feed/artigo1.png";
+import iconEnviar from "../../../Imagens/Img feed/icon-enviarposter.png";
+import iconEditar from "../../../Imagens/Img feed/Icone editar.png";
+import iconLixo from "../../../Imagens/Img feed/iconLixo.png";
+import iconProfile from "../../../Imagens/Img feed/imagem-do-usuario-com-fundo-preto.png";
 
-import { readPosts } from '../../../firebase/firestore';
-import './feed.css';
+import { readPosts } from "../../../firebase/firestore";
 
-
+import "./feed.css";
 
 export const feed = () => {
   const container = document.createElement("section");
   container.innerHTML = `
-  <div class="container-pai">
-
         <div class="container">
           <img class="#" src="${iconFeed}" href="#"></img>       
           <img class="#" src="${iconNoticias}" href="#"></img> 
           <img class="#" src="${iconArtigos}" href="#"></img> 
-         </div>
+      </div>
       <div id="input-container">
        <div><h3>name<h3></div> 
         <input type="text" name="post" placeholder="publicação" id="post"/>
-        <button id="publish-button" type="button"><img src="${iconEnviar}" alt="Send Button"></button>
-        
+        <button id="publish-button" type="button"><img src="${iconEnviar}" alt="Send Button"></button> 
       </div>
-
       <section id="show-container">
       <div id="post-show"></div>
       </section>
-  </div>
-       
       `;
 
-  let viewPost = container.querySelector("#post-show");
+  container.style.height = "100%";
+
+  const viewPost = container.querySelector("#post-show");
+
+  viewPost.classList.add("feed-container");
 
   readPosts((posts) => {
-    console.log(posts);
     let template = "";
-    posts.forEach(post => {
-      template += `<div><h3>name</h3>
-          <div type="text" id="post-show-text">${post.text}</div>
-          <div type="date"> ${post.date}</div>
-          <button id="edit-button" type="button"><img src="" alt="Edit Button"></button>
-          <button id="delete-button" type="button"><img src="" alt="Delete Button"></button>
-          </div>`;
+    posts.forEach((post) => {
+      template += `
+        <div class="feed">
+          <h3>name</h3>
+          <div type="text" id="post-show-text">${post.textOfPost}</div>
+          <div type="date"> ${post.dateOfPost}</div>
+          <div class="action-container">
+            <button class="unstyled-button" id="edit-button" type="button">
+              <img src="${iconEditar}" alt="Edit Button" class="small">
+            </button>
+            <button class="unstyled-button" id="delete-button" type="button">
+              <img src="${iconLixo}" alt="Delete Button" class="small">
+            </button>
+          </div>
+        </div>
+      `;
     });
-      viewPost.innerHTML = template;
+    viewPost.innerHTML = template;
   });
 
 
@@ -53,8 +61,3 @@ export const feed = () => {
 
   return container;
 };
-
-
-/* logica 
-
-CRIAR UM */
