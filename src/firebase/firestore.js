@@ -11,7 +11,7 @@ export function readPosts(callback) {
                 textOfPost: doc.data().text,
                 dateOfPost: doc.data().date
             }
-            posts.push(doc.data());
+            posts.push(obj);
         });
         // console.log("Posts: ", posts.join(", "));
         callback(posts);

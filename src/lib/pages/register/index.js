@@ -1,9 +1,9 @@
 import { verifyRegister } from "../../../firebase/firebaseAuth";
-import './register.css'
+import "./register.css";
 
 export const register = () => {
   const container = document.createElement("section");
-    container.innerHTML = `
+  container.innerHTML = `
     <form class="registro-container"> 
       <h3 class="titulo">BEM VINDO(A) A MEDGREEN<h3>
       <label class="config-titulo">Digite seu nome completo:</label>
@@ -34,21 +34,20 @@ export const register = () => {
       </div>
 
       </form>
-      `;
+  `;
 
   const email = container.querySelector(".email-input");
   const password = container.querySelector(".key");
-  const date = container.querySelector("#date")
+  const date = container.querySelector("#date");
   const emailMessage = container.querySelector(".error-none");
   const passwordMessage = container.querySelector(".error-none");
-  const dateMessage = container.querySelector(".error-none")
+  const dateMessage = container.querySelector(".error-none");
   const enterButton = container.querySelector("#enter");
 
   const validateDate = container.querySelector(".form");
   validateDate.addEventListener("input", function (e) {
     e.preventDefault();
     toggleRegisterErrors(email, password, date);
-
   });
 
   function toggleRegisterErrors(email, password, date) {
@@ -78,8 +77,8 @@ export const register = () => {
         dateMessage.classList.add("error-block");
         dateMessage.classList.remove("error-none");
       }
-    })
-  };
+    });
+  }
 
   function toggleButtonsDisable() {
     const emailValid = isValidEmail(email.value);
@@ -103,7 +102,7 @@ export const register = () => {
 
   function isValidPassword(password) {
     if (password.length - 1 >= 7) {
-      return true
+      return true;
     }
   }
 
@@ -113,15 +112,15 @@ export const register = () => {
     const currentYear = currentDate.getFullYear();
     const age = currentYear - new Date(date).getFullYear();
     if (age >= ageMin) {
-      return true
+      return true;
     } else {
-      return false
+      return false;
     }
   }
 
   let form = container.querySelector(".registro-container");
 
-  form.addEventListener('submit', function (e) {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
     const verifyEmail = container.querySelector(".email-input").value;
     const verifyPassword = container.querySelector(".key").value;
@@ -132,15 +131,11 @@ export const register = () => {
       })
       .catch((error) => {
         console.error(error);
-        alert("Erro ao relizar o cadastro, verifique se seus dados estao corretos e tente novamente");
-      })
+        alert(
+          "Erro ao relizar o cadastro, verifique se seus dados estao corretos e tente novamente"
+        );
+      });
   });
 
-  return container
-
+  return container;
 };
-
-
-
-
-

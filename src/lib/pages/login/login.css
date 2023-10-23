@@ -1,224 +1,124 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Courier New', Courier, monospace;
-    box-sizing: border-box; 
-  }
-
-
-button:disabled,
-button[disabled]{
-    opacity: 0.7; 
-    
+.error-block {
+  color: white;
+  background-color: red;
+  display: block;
 }
 
-.error-block{
-    color: white;
-    background-color: red;
-    display: block;
+.error-none {
+  display: none;
 }
 
-
-.error-none{
-    display: none;
+.titulo {
+  text-align: center;
+  color: hsl(0, 0%, 97%);
+  margin-bottom: 20px;
 }
 
-
-/* CSS PARTE HEADER ---- EMI AQUI */
-
-header{    
-    
-    background: #FFFFFF;
-    height: 150px;
-    align-items: center;
-    display: flex;
-    justify-content: center;  
-    padding-top: 2rem;  
+.login-container {
+  text-align: center;
+  display: flex;
+  align-content: center;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  width: 80%;
+  margin: 0 auto;
+  padding: 5%;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 50px;
 }
-
-nav {
-    display: block;
-    justify-items: start;   
-    
-
-}
-
-.logo {
-    width: 20rem;    
-        
-}
-
-
-/* ----------------FIM CSS HEADER --------- EMI AQUI */  
-
-
-
-body{
-    background-image: url(Imagens/cannabis-sementes-de-cannabis-oleo-de-cannabis-colocado-no-chao-de-madeira-com-uma-arvore-verde-ao-fundo.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-
-}
-
-.titulo{
-    text-align: center;
-    color: hsl(0, 0%, 97%);
-    margin-bottom: 20px;    
-
-}
-
-.login-container{    
-    text-align: center;    
-    display: flex;
-    align-content: center;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.20);    
-    backdrop-filter: blur(20px);    
-    width: 80%;
-    margin: 0 auto;
-    padding: 5%;
-    flex-direction: column;
-    gap: 5px; 
-    margin-top: 50px;
-    
-}
-
-.registro-container{    
-    text-align: center;    
-    display: flex;
-    align-content: center;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.20);    
-    backdrop-filter: blur(20px);    
-    width: 80%;    
-    margin: 0 auto;
-    padding: 5%;
-    flex-direction: column;
-    gap: 1rem; 
-    margin-top: 50px;
-    
-}
-
-@media (min-width: 1024px) {
-    .registro-container {
-        display: flex;
-        width: 40%;
-        margin-right: 50px;
-        margin-top: 100px;
-    }
-    }
 
 /* Media para telas grandes */
 @media (min-width: 1024px) {
-    .login-container {
-        display: flex;
-        width: 40%;
-        margin-right: 50px;
-        margin-top: 100px;
-    }
-    }
-
-.send-container  {
-    width: 100%;
+  .login-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem ;
+    width: 40%;
+    margin-right: 50px;
+    margin-top: 100px;
+  }
 }
 
-.send-container > button  {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    font-family: BarlowSemiCondensed-SemiBold;
-    line-height: 20px;    
-    border-radius: 5px;
-    background: #1B481A;
-    color: #FFFFFF;
-    box-shadow: 5px 5px 10px 0px rgba(3, 3, 3, 0.952); 
-    padding: 0.5rem 4rem;        
+.send-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
 }
 
-.social-container  {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 2rem ;
-    padding-top: 2rem;
+.send-container > button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-family: BarlowSemiCondensed-SemiBold;
+  line-height: 20px;
+  border-radius: 5px;
+  background: #1b481a;
+  color: #ffffff;
+  box-shadow: 5px 5px 10px 0px rgba(3, 3, 3, 0.952);
+  padding: 0.5rem 4rem;
 }
 
+.social-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 2rem;
+}
 
-.social-container > button  {
-    align-items: center;
-    display: flex;
-    font-family: BarlowSemiCondensed-SemiBold;
-    line-height: 20px;    
-    border-radius: 5px;
-    background: #1B481A;
-    color: #FFFFFF;
-    box-shadow: 5px 5px 10px 0px rgba(3, 3, 3, 0.952); 
-    padding: 0.5rem 1rem;
-    gap: 1rem;       
-   
+.social-container > button {
+  align-items: center;
+  display: flex;
+  font-family: BarlowSemiCondensed-SemiBold;
+  line-height: 20px;
+  border-radius: 5px;
+  background: #1b481a;
+  color: #ffffff;
+  box-shadow: 5px 5px 10px 0px rgba(3, 3, 3, 0.952);
+  padding: 0.5rem 1rem;
+  gap: 1rem;
 }
 
 .social-container > button > img {
-    width: 1rem;
-        
+  width: 1rem;
+}
 
-} 
-
-
-
-button:hover{
-    background-color: #FFFFFF;
-    color: #1B481A;
-
+button:hover {
+  background-color: #ffffff;
+  color: #1b481a;
 }
 
 .email-input {
-    padding: 8px;
-    border-radius: 5px;
-    margin: 5px 10px 15px 10px;
-    width: 90%;
-    font-size: 15px;
-
-    }
-
-.key{
-    padding: 8px;
-    border-radius: 5px;
-    margin: 10px;
-    width: 90%;
-    font-size: 15px;
-    margin: 5px 10px 15px 10px;
+  padding: 8px;
+  border-radius: 5px;
+  margin: 5px 10px 15px 10px;
+  width: 90%;
+  font-size: 15px;
 }
 
-.name{
-    padding: 8px;
-    border-radius: 5px;
-    margin: 10px;
-    width: 90%;
-    font-size: 15px;
-    margin: 5px 10px 15px 10px;
+.key {
+  padding: 8px;
+  border-radius: 5px;
+  margin: 10px;
+  width: 90%;
+  font-size: 15px;
+  margin: 5px 10px 15px 10px;
 }
 
-.config-titulo{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 15px;
+.name {
+  padding: 8px;
+  border-radius: 5px;
+  margin: 10px;
+  width: 90%;
+  font-size: 15px;
+  margin: 5px 10px 15px 10px;
 }
 
-#date{
-    padding: 8px;
-    border-radius: 5px;
-    width: 90%;
-    font-size: 15px;
-    margin: 5px 10px 15px 10px;
-}
-
-.login-a {
-          
-    color:#c51111;
+.config-titulo {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
 }
