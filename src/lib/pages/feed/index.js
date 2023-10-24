@@ -13,32 +13,35 @@ import "./feed.css";
 export const feed = () => {
   const container = document.createElement("section");
   container.innerHTML = `
-      <div class="container">
+        <div class="container">
           <img class="#" src="${iconFeed}" href="#"></img>       
           <img class="#" src="${iconNoticias}" href="#"></img> 
           <img class="#" src="${iconArtigos}" href="#"></img> 
       </div>
-      <div class="container-pai">
-        <div id="input-container">
-          <div class="perfil-container">          
-             <img src="${iconProfile}" alt="perfil"> </img >
-             <h3>Name<h3>
-          </div> 
-          <textarea name="post" id="post" rows="4" cols="50" placeholder="Publicação..."></textarea>
-          <div class="button-container">
-            <button id="publish-button" type="button" class="unstyled-button">
-              <img src="${iconEnviar}" alt="Send Button">
-            </button>
-          </div>
-        </div>
-
-        <section id="show-container">
-         <div id="post-show"></div>
-        </section>
+      <div id="input-container">
+       <div><h3>name<h3></div> 
+        <input type="text" name="post" placeholder="publicação" id="post"/>
+        <button id="publish-button" type="button"><img src="${iconEnviar}" alt="Send Button"></button> 
       </div>
-    `;
+      <section id="show-container">
+      <div id="post-show"></div>
+      </section>
+      `;
 
-  container.style.height = "100%";
+  container.style.height = "90%";  
+
+  
+  //FUNÇÃO PARA LER OS POSTER
+
+  // const publishButton = container.querySelector('#publish-button');
+  // publishButton.addEventListener('click', () =>  {
+  // ();
+
+  // });
+
+
+
+
 
   const viewPost = container.querySelector("#post-show");
 
@@ -66,13 +69,22 @@ export const feed = () => {
     viewPost.innerHTML = template;
   });
 
-  let publishButton = container.querySelector('#publish-button');
+
+
+<<<<<<< HEAD
+=======
+  
+
+  // 
+
+  
 
   publishButton.addEventListener('click', function(e){
     e.preventDefault();
     console.log("publicou");
   });
 
+>>>>>>> 0c8adada6753599aafb5f618397e447717d0ecf9
 
   return container;
 };

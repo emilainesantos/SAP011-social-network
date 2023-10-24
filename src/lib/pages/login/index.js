@@ -21,7 +21,7 @@ export const login = () => {
     </div>          
     
     <div class="social-container">
-      <button id="Google">
+      <button id="google">
         <img src="../../../Imagens/icon-google01.png"></img>             
         <h1>Login com Google</h1>
       </button>
@@ -37,11 +37,14 @@ export const login = () => {
   const passwordMessage = container.querySelector(".error-none");
   const enterButton = container.querySelector("#enter");
   const form = container.querySelector(".login-container");
-  const gmail = container.querySelector("#Google");
+  const gmail = container.querySelector("#google");
+
+
 
   gmail.addEventListener("click", function () {
     GoogleAuthProvider();
   });
+ 
 
   enterButton.addEventListener("click", function () {
     if (email.value === "" || isValidEmail(email)) {
