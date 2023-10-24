@@ -38,7 +38,7 @@ export const feed = () => {
       </div>
     `;
 
-  container.style.height = "100%";
+  container.style.height = "90%";
 
   const viewPost = container.querySelector("#post-show");
 
