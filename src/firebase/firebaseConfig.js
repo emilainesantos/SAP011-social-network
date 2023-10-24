@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyDlJSdWx8JV6RdpZIBCk_UPGvdGwSem6mY",
   authDomain: "social-network-c9640.firebaseapp.com",
@@ -12,6 +13,7 @@ const firebaseConfig = {
   measurementId: "G-J7P77FCQ46"
 };
 
+// inicializando o firebase
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 

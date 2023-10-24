@@ -28,7 +28,20 @@ export const feed = () => {
       </section>
       `;
 
-  container.style.height = "100%";
+  container.style.height = "90%";  
+
+  
+  //FUNÇÃO PARA LER OS POSTER
+
+  // const publishButton = container.querySelector('#publish-button');
+  // publishButton.addEventListener('click', () =>  {
+  // ();
+
+  // });
+
+
+
+
 
   const viewPost = container.querySelector("#post-show");
 
@@ -58,6 +71,20 @@ export const feed = () => {
 
 
 
+<<<<<<< HEAD
+=======
+  
+
+  // 
+
+  
+
+  publishButton.addEventListener('click', function(e){
+    e.preventDefault();
+    console.log("publicou");
+  });
+
+>>>>>>> 0c8adada6753599aafb5f618397e447717d0ecf9
 
   return container;
 };
