@@ -38,7 +38,20 @@ export const feed = () => {
       </div>
     `;
 
-  container.style.height = "90%";
+  container.style.height = "90%";  
+
+  
+  //FUNÇÃO PARA LER OS POSTER
+
+  // const publishButton = container.querySelector('#publish-button');
+  // publishButton.addEventListener('click', () =>  {
+  // ();
+
+  // });
+
+
+
+
 
   const viewPost = container.querySelector("#post-show");
 
@@ -66,7 +79,13 @@ export const feed = () => {
     viewPost.innerHTML = template;
   });
 
-  let publishButton = container.querySelector('#publish-button');
+
+
+  
+
+  // 
+
+  
 
   publishButton.addEventListener('click', function(e){
     e.preventDefault();

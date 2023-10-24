@@ -2,6 +2,24 @@ import { db } from './firebaseConfig';
 import { collection, query, onSnapshot } from 'firebase/firestore';
 // import { collection, addDoc } from "firebase/firestore";
 
+
+// function lerPosts(){
+//     const q = query(collection(db, "posts"));
+// const unsubscribe = onSnapshot(q, (querySnapshot) => {
+//   const posts = [];
+//   querySnapshot.forEach((doc) => {
+//       posts.push(doc.data().text);
+//   });
+//   console.log("Current cities in CA: ", cities.join(", "));
+// });
+
+// }
+
+
+
+
+
+
 export function readPosts(callback) {
     const q = query(collection(db, 'posts'));
     onSnapshot(q, (querySnapshot) => {
@@ -13,7 +31,7 @@ export function readPosts(callback) {
             }
             posts.push(obj);
         });
-        // console.log("Posts: ", posts.join(", "));
+         console.log("Posts: ", posts.join(", "));
         callback(posts);
     });
 };
