@@ -65,5 +65,14 @@ export const feed = () => {
     });
     viewPost.innerHTML = template;
   });
+
+  let publishButton = container.querySelector('#publish-button');
+
+  publishButton.addEventListener('click', function(e){
+    e.preventDefault();
+    console.log("publicou");
+  });
+
+
   return container;
 };
