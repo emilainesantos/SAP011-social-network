@@ -15,6 +15,7 @@ export function readPosts(callback) {
         });
         // console.log("Posts: ", posts.join(", "));
         callback(posts);
+        //teste
     });
 };
 
