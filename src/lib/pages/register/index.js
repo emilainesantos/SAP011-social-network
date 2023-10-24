@@ -54,28 +54,28 @@ export const register = () => {
     enterButton.addEventListener("input", function (e) {
       e.preventDefault();
       if (email.value === "" || isValidEmail(email)) {
-        emailMessage.classList.contains("error-none");
-        emailMessage.classList.remove("error-none");
-        emailMessage.classList.add("error-block");
+        emailMessage.classList.contains(".error-none");
+        emailMessage.classList.remove(".error-none");
+        emailMessage.classList.add(".error-block");
       } else {
-        emailMessage.classList.add("error-block");
-        emailMessage.classList.remove("error-none");
+        emailMessage.classList.add(".error-block");
+        emailMessage.classList.remove(".error-none");
       }
 
       if (password.value === "" || isValidPassword(password) === false) {
-        passwordMessage.classList.remove("error-none");
-        passwordMessage.classList.add("error-block");
+        passwordMessage.classList.remove(".error-none");
+        passwordMessage.classList.add(".error-block");
       } else {
         passwordMessage.classList.add("error-none");
         passwordMessage.classList.remove("error-block");
       }
 
       if (date <= 18) {
-        dateMessage.classList.remove("error-none");
-        dateMessage.classList.add("error-block");
+        dateMessage.classList.remove(".error-none");
+        dateMessage.classList.add(".error-block");
       } else {
-        dateMessage.classList.add("error-block");
-        dateMessage.classList.remove("error-none");
+        dateMessage.classList.add(".error-block");
+        dateMessage.classList.remove(".error-none");
       }
     });
   }

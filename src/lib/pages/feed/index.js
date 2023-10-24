@@ -30,20 +30,9 @@ export const feed = () => {
 
   container.style.height = "90%";  
 
-  
-  //FUNÇÃO PARA LER OS POSTER
-
-  // const publishButton = container.querySelector('#publish-button');
-  // publishButton.addEventListener('click', () =>  {
-  // ();
-
-  // });
-
-
-
-
 
   const viewPost = container.querySelector("#post-show");
+  const publishButton = container.querySelector("#publish-button");
 
   viewPost.classList.add("feed-container");
 
@@ -69,22 +58,11 @@ export const feed = () => {
     viewPost.innerHTML = template;
   });
 
-
-
-<<<<<<< HEAD
-=======
-  
-
-  // 
-
-  
-
   publishButton.addEventListener('click', function(e){
     e.preventDefault();
     console.log("publicou");
   });
 
->>>>>>> 0c8adada6753599aafb5f618397e447717d0ecf9
 
   return container;
 };
