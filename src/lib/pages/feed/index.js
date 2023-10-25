@@ -6,7 +6,7 @@ import iconEditar from "../../../Imagens/Img feed/Icone editar.png";
 import iconLixo from "../../../Imagens/Img feed/iconLixo.png";
 import iconProfile from "../../../Imagens/Img feed/imagem-do-usuario-com-fundo-preto.png";
 
-import { readPosts } from "../../../firebase/firestore";
+import { readPosts, recordPosts } from "../../../firebase/firestore";
 
 import "./feed.css";
 
@@ -28,7 +28,7 @@ export const feed = () => {
       </section>
       `;
 
-  container.style.height = "90%";  
+  container.style.height = "90%";
 
 
   const viewPost = container.querySelector("#post-show");
@@ -58,9 +58,13 @@ export const feed = () => {
     viewPost.innerHTML = template;
   });
 
-  publishButton.addEventListener('click', function(e){
+  publishButton.addEventListener('click', function (e) {
     e.preventDefault();
-    console.log("publicou");
+
+    let textOfPost = container.querySelector("#post").value;
+    console.log(textOfPost);
+    recordPosts(textOfPost);
+    
   });
 
 
