@@ -7,11 +7,6 @@
   height: 10rem;
 }
 
- .container-pai{
-  background: red;
-  padding: 15px;
- }
-
 .container {
   gap: 25px;
   display: flex;

@@ -18,17 +18,26 @@ export const feed = () => {
           <img class="#" src="${iconNoticias}" href="#"></img> 
           <img class="#" src="${iconArtigos}" href="#"></img> 
       </div>
-      <div id="input-container">
-       <div><h3>name<h3></div> 
-        <input type="text" name="post" placeholder="publicação" id="post"/>
-        <button id="publish-button" type="button"><img src="${iconEnviar}" alt="Send Button"></button> 
+      <div class="container-pai">
+       <div id="input-container">
+        <div class="perfil-container">          
+          <img src="${iconProfile}" alt="perfil"> </img >
+          <h3>Name<h3>
+        </div> 
+        <textarea name="post" id="post" rows="4" cols="50" placeholder="Publicação..."></textarea>
+        <div class="button-container">
+          <button id="publish-button" type="button" class="unstyled-button">
+            <img src="${iconEnviar}" alt="Send Button">
+          </button>
       </div>
+      
       <section id="show-container">
-      <div id="post-show"></div>
+        <div id="post-show"></div>
       </section>
+      </div>
       `;
 
-  container.style.height = "90%";
+  container.style.height = "100%";
 
 
   const viewPost = container.querySelector("#post-show");
