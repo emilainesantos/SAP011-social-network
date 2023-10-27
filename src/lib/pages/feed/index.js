@@ -24,12 +24,14 @@ export const feed = () => {
           <img src="${iconProfile}" alt="perfil"> </img >
           <h3>Name<h3>
         </div> 
+        
         <textarea name="post" id="post" rows="4" cols="50" placeholder="Publicação..."></textarea>
-        <div class="button-container">
-          <button id="publish-button" type="button" class="unstyled-button">
-            <img src="${iconEnviar}" alt="Send Button">
-          </button>
-      </div>
+          <div class="button-container">
+            <button id="publish-button" type="button" class="unstyled-button">
+              <img src="${iconEnviar}" alt="Send Button">
+            </button>
+          </div>
+        </div>
       
       <section id="show-container">
         <div id="post-show"></div>
