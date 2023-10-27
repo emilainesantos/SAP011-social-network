@@ -6,7 +6,7 @@ import iconEditar from "../../../Imagens/Img feed/Icone editar.png";
 import iconLixo from "../../../Imagens/Img feed/iconLixo.png";
 import iconProfile from "../../../Imagens/Img feed/imagem-do-usuario-com-fundo-preto.png";
 
-import { readPosts, recordPosts } from "../../../firebase/firestore";
+import { readPosts, recordPosts, deletePosts } from "../../../firebase/firestore";
 
 import "./feed.css";
 
@@ -60,7 +60,7 @@ export const feed = () => {
               <img src="${iconEditar}" alt="Edit Button" class="small">
             </button>
             <button class="unstyled-button" id="delete-button" type="button">
-              <img src="${iconLixo}" alt="Delete Button" class="small">
+              <img src="${iconLixo}" alt="Delete Button" class="small" data-postid="${posts.id}">
             </button>
           </div>
         </div>
@@ -73,11 +73,25 @@ export const feed = () => {
     e.preventDefault();
 
     let textOfPost = container.querySelector("#post").value;
-    console.log(textOfPost);
     recordPosts(textOfPost);
-    
+
   });
 
+  let deleteButtons = container.querySelectorAll(".small");
 
+  deleteButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      // const id = e.target.dataset.postid;
+      // deletePosts(id);
+      console.log(deleteButtons);
+    });
+  });
   return container;
-};
+}
+
+
+
+
+
+
