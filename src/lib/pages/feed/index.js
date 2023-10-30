@@ -6,7 +6,12 @@ import iconEditar from "../../../Imagens/Img feed/Icone editar.png";
 import iconLixo from "../../../Imagens/Img feed/iconLixo.png";
 import iconProfile from "../../../Imagens/Img feed/imagem-do-usuario-com-fundo-preto.png";
 
-import { readPosts, recordPosts } from "../../../firebase/firestore";
+import { 
+  readPosts,
+  recordPosts,
+  atualizarPost,
+  
+ } from "../../../firebase/firestore";
 
 import "./feed.css";
 
@@ -44,6 +49,7 @@ export const feed = () => {
 
   const viewPost = container.querySelector("#post-show");
   const publishButton = container.querySelector("#publish-button");
+  const edicaoBtns = container.querySelectorAll(".edit-btn");
 
   viewPost.classList.add("feed-container");
 
@@ -56,7 +62,7 @@ export const feed = () => {
           <div type="text" id="post-show-text">${post.textOfPost}</div>
           <div type="date"> ${post.dateOfPost}</div>
           <div class="action-container">
-            <button class="unstyled-button" id="edit-button" type="button">
+            <button class="unstyled-button" class="edit-btn" id="edit-${posts[0].id}" data.postid"${posts[0].id}" type="button">
               <img src="${iconEditar}" alt="Edit Button" class="small">
             </button>
             <button class="unstyled-button" id="delete-button" type="button">
@@ -78,6 +84,23 @@ export const feed = () => {
     
   });
 
+  edicaoBtns.forEach((editBtn) => {
+    editBtn.addEventListener( "click", (event) =>{
+      event.preventDefault();
+      const id = event.target.dataset.postid;
+      const novoTexto = "Novo texto Emi"
+      
+      atualizarPost(id, novoTexto);
+
+
+
+    } )
+
+  });
+
+
 
   return container;
 };
+
+

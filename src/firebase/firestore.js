@@ -1,15 +1,25 @@
 import { db } from './firebaseConfig';
-import { collection, query, onSnapshot, addDoc } from "firebase/firestore";
+import { 
+    collection,
+    query,
+    onSnapshot,
+    addDoc,
+    orderBy,
+    doc,
+    updateDoc,
+ } from "firebase/firestore";
 import { getFirestore, serverTimestamp } from "firebase/firestore";
 
 export function readPosts(callback) {
-    const q = query(collection(db, "posts"));
+    const q = query(collection(db, "posts"), orderBy("date", "desc"));
+
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
         const posts = []
-        querySnapshot.forEach((doc) => {
+        querySnapshot.forEach((document) => {
             const obj = {
-                textOfPost: doc.data().text,
-                dateOfPost: new Date(doc.data().date.seconds*1000)
+                textOfPost: document.data().text,
+                dateOfPost: new Date(document.data().date.seconds*1000),
+                id: document.id,
             }
             posts.push(obj);
         });
@@ -29,3 +39,12 @@ export async function recordPosts(textOfPost) {
     console.log("Document written with ID: ", docRef.id);
 
 } 
+
+export function atualizarPost(postid, novoTexto){
+    const postRef = doc(db, "posts", postid);
+    
+    return updateDoc(postRef, {
+        text: novoTexto,
+    });
+
+}
