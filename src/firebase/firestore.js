@@ -11,15 +11,19 @@ import {
 import { getFirestore, serverTimestamp } from "firebase/firestore";
 
 export function readPosts(callback) {
-    const q = query(collection(db, "posts"), orderBy("date", "desc"));
-
+    const q = query(collection(db, "posts"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
         const posts = []
         querySnapshot.forEach((document) => {
+            console.log(document.data().date, document.id)
+            let dateOfPost = document.data().date;
+            if(dateOfPost === null){
+                dateOfPost = serverTimestamp();
+            }
             const obj = {
                 textOfPost: document.data().text,
-                dateOfPost: new Date(document.data().date.seconds*1000),
-                id: document.id,
+                dateOfPost: new Date(dateOfPost.seconds*1000),
+                id: document.id
             }
             posts.push(obj);
         });
