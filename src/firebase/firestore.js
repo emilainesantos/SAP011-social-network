@@ -3,7 +3,7 @@ import { collection, query, onSnapshot, addDoc, orderBy, updateDoc, doc, deleteD
 import { getFirestore, serverTimestamp } from "firebase/firestore";
 
 export function readPosts(callback) {
-    const q = query(collection(db, "posts"));
+    const q = query(collection(db, "posts"), orderBy("date", "desc"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
         const posts = []
         querySnapshot.forEach((document) => {
