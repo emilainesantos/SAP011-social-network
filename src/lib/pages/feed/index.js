@@ -5,14 +5,7 @@ import iconEnviar from "../../../Imagens/Img feed/icon-enviarposter.png";
 import iconEditar from "../../../Imagens/Img feed/Icone editar.png";
 import iconLixo from "../../../Imagens/Img feed/iconLixo.png";
 import iconProfile from "../../../Imagens/Img feed/imagem-do-usuario-com-fundo-preto.png";
-
-import { 
-  readPosts,
-  recordPosts,
-  atualizarPost,
-  
- } from "../../../firebase/firestore";
-
+import { readPosts, recordPosts, atualizarPosts, deletePosts } from "../../../firebase/firestore";
 import "./feed.css";
 
 export const feed = () => {
@@ -47,9 +40,8 @@ export const feed = () => {
   container.style.height = "100%";
 
 
-  const viewPost = container.querySelector("#post-show");
-  const publishButton = container.querySelector("#publish-button");
-  const edicaoBtns = container.querySelectorAll(".edit-btn");
+  let viewPost = container.querySelector("#post-show");
+  let publishButton = container.querySelector("#publish-button");
 
   viewPost.classList.add("feed-container");
 
@@ -62,10 +54,10 @@ export const feed = () => {
           <div type="text" id="post-show-text">${post.textOfPost}</div>
           <div type="date"> ${post.dateOfPost}</div>
           <div class="action-container">
-            <button class="unstyled-button" class="edit-btn" id="edit-${posts[0].id}" data.postid"${posts[0].id}" type="button">
+            <button class="edit-btn unstyled-button" id="data-${posts.id}" data-postid ="${posts.id}" type="button">
               <img src="${iconEditar}" alt="Edit Button" class="small">
             </button>
-            <button class="unstyled-button" id="delete-button" type="button">
+            <button class="deletebtn unstyled-button" id="data-${posts.id}" data-postid="${posts.id}" type="button">
               <img src="${iconLixo}" alt="Delete Button" class="small">
             </button>
           </div>
@@ -79,26 +71,30 @@ export const feed = () => {
     e.preventDefault();
 
     let textOfPost = container.querySelector("#post").value;
-    console.log(textOfPost);
     recordPosts(textOfPost);
-    
-  });
-
-  edicaoBtns.forEach((editBtn) => {
-    editBtn.addEventListener( "click", (event) =>{
-      event.preventDefault();
-      const id = event.target.dataset.postid;
-      const novoTexto = "Novo texto Emi"
-      
-      atualizarPost(id, novoTexto);
-
-
-
-    } )
 
   });
 
+  let editBtn = container.querySelectorAll(".edit-btn");
 
+  editBtn.forEach((editBtn) => {
+    editBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = e.target.dataset.postid;
+      const novoTexto = "Novo texto Emi" //pegar o elemento do container.value
+      atualizarPosts(id, novoTexto);
+    })
+  });
+
+  let deleteBtn = container.querySelectorAll(".deletebtn");
+
+  deleteBtn.forEach((deleteBtn) => {
+    deleteBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = e.target.dataset.postid;
+      deletePosts(id);
+    })
+  });
 
   return container;
 };

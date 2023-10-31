@@ -1,13 +1,5 @@
 import { db } from './firebaseConfig';
-import { 
-    collection,
-    query,
-    onSnapshot,
-    addDoc,
-    orderBy,
-    doc,
-    updateDoc,
- } from "firebase/firestore";
+import { collection, query, onSnapshot, addDoc, orderBy, updateDoc, doc, deleteDoc } from "firebase/firestore";
 import { getFirestore, serverTimestamp } from "firebase/firestore";
 
 export function readPosts(callback) {
@@ -15,24 +7,22 @@ export function readPosts(callback) {
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
         const posts = []
         querySnapshot.forEach((document) => {
-            console.log(document.data().date, document.id)
             let dateOfPost = document.data().date;
-            if(dateOfPost === null){
+            if (dateOfPost === null) {
                 dateOfPost = serverTimestamp();
             }
             const obj = {
                 textOfPost: document.data().text,
-                dateOfPost: new Date(dateOfPost.seconds*1000),
+                dateOfPost: new Date(dateOfPost.seconds * 1000),
                 id: document.id
             }
             posts.push(obj);
         });
-         console.log("Posts: ", posts.join(", "));
+
         callback(posts);
-        //teste
+
     });
 };
-
 
 export async function recordPosts(textOfPost) {
     const docRef = await addDoc(collection(db, "posts"), {
@@ -40,15 +30,17 @@ export async function recordPosts(textOfPost) {
         id: "",
         date: serverTimestamp(),
     });
-    console.log("Document written with ID: ", docRef.id);
-
-} 
-
-export function atualizarPost(postid, novoTexto){
-    const postRef = doc(db, "posts", postid);
-    
-    return updateDoc(postRef, {
-        text: novoTexto,
-    });
 
 }
+
+export function atualizarPosts(postid, novoTexto) {
+    const postRef = doc(db, 'posts', postid);
+    return updateDoc(postRef, { 
+        text: novoTexto, 
+    });
+}
+
+export async function deletePosts(postid) {
+    await deleteDoc(doc(db, "posts", postid));
+}
+

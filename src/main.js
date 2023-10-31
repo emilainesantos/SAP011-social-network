@@ -18,13 +18,13 @@ function start() {
         main.innerHTML = ""; // Limpa o conteudo existente em 'main'
         main.appendChild(login());
         break;
-      case "#feed":
-        main.innerHTML = ""; // Limpa o conteudo existente em 'main'
-        main.appendChild(feed());
-        break;
       case "#register":
         main.innerHTML = ""; // Limpa o conteudo existente em 'main'
         main.appendChild(register());
+        break;
+      case "#feed":
+        main.innerHTML = ""; // Limpa o conteudo existente em 'main'
+        main.appendChild(feed());
         break;
       default:
         main.appendChild(login()); // erro Mensagem padrao de erro
