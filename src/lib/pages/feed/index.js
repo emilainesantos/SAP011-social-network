@@ -86,6 +86,19 @@ export const feed = () => {
 
   });
 
+ //BOTÃO EXCLUIR POSTER
+
+ let deleteBtn = viewPost.querySelectorAll(".deletebtn");
+
+ deleteBtn.forEach((deleteBtn) => {
+   deleteBtn.addEventListener('click', (e) => {
+     e.preventDefault();
+     const id = e.target.parentNode.dataset.postid;
+     deletePosts(id);
+   })
+ });
+
+
   });
 
   publishButton.addEventListener('click', function (e) {
@@ -110,15 +123,15 @@ export const feed = () => {
   //   })
   // });
 
-  let deleteBtn = container.querySelectorAll(".deletebtn");
+  // let deleteBtn = container.querySelectorAll(".deletebtn");
 
-  deleteBtn.forEach((deleteBtn) => {
-    deleteBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const id = e.target.dataset.postid;
-      deletePosts(id);
-    })
-  });
+  // deleteBtn.forEach((deleteBtn) => {
+  //   deleteBtn.addEventListener('click', (e) => {
+  //     e.preventDefault();
+  //     const id = e.target.dataset.postid;
+  //     deletePosts(id);
+  //   })
+  // });
 
   return container;
 };
