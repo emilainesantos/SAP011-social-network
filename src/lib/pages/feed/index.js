@@ -66,9 +66,6 @@ export const feed = () => {
     });
     viewPost.innerHTML = template;
 
-
-
-
     //BOTÃO EDITAR
     let editBtns = viewPost.querySelectorAll(".edit-btn");
   console.log(editBtns);
@@ -95,7 +92,7 @@ export const feed = () => {
      e.preventDefault();
      const id = e.target.parentNode.dataset.postid;
      deletePosts(id);
-   })
+   });
  });
 
 
