@@ -51,13 +51,13 @@ export const feed = () => {
       template += `
         <div class="feed">
           <h3>name</h3>
-          <div type="text" id="post-show-text">${post.textOfPost}</div>
+          <div type="text" id="post-show-text">${post.textOfPost}</div> 
           <div type="date"> ${post.dateOfPost}</div>
           <div class="action-container">
-            <button class="edit-btn unstyled-button" id="data-${posts.id}" data-postid ="${posts.id}" type="button">
-              <img src="${iconEditar}" alt="Edit Button" class="small">
+            <button class="edit-btn unstyled-button" id="data-${post.id}" data-postid ="${post.id}" type="button">
+              <img  src="${iconEditar}" alt="Edit Button" class="small">
             </button>
-            <button class="deletebtn unstyled-button" id="data-${posts.id}" data-postid="${posts.id}" type="button">
+            <button class="deletebtn unstyled-button" id="data-${post.id}" data-postid="${post.id}" type="button">
               <img src="${iconLixo}" alt="Delete Button" class="small">
             </button>
           </div>
@@ -65,6 +65,27 @@ export const feed = () => {
       `;
     });
     viewPost.innerHTML = template;
+
+
+
+
+    //BOTÃO EDITAR
+    let editBtns = viewPost.querySelectorAll(".edit-btn");
+  console.log(editBtns);
+
+  editBtns.forEach((editBtn) => {
+    editBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      console.log(e);
+      const id = e.target.parentNode.dataset.postid;
+      console.log(e.target.parentNode);
+      const novoTexto = "Novo texto Emi" //pegar o elemento do container.value
+      atualizarPosts(id, novoTexto);
+      
+    });
+
+  });
+
   });
 
   publishButton.addEventListener('click', function (e) {
@@ -75,16 +96,19 @@ export const feed = () => {
 
   });
 
-  let editBtn = container.querySelectorAll(".edit-btn");
+  // let editBtns = container.querySelectorAll(".edit-btn");
+  // console.log(editBtns);
 
-  editBtn.forEach((editBtn) => {
-    editBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const id = e.target.dataset.postid;
-      const novoTexto = "Novo texto Emi" //pegar o elemento do container.value
-      atualizarPosts(id, novoTexto);
-    })
-  });
+  // editBtns.forEach((editBtn) => {
+  //   editBtn.addEventListener('click', (e) => {
+  //     e.preventDefault();
+  //     console.log(e);
+  //     const id = e.target.dataset.postid;
+  //     const novoTexto = "Novo texto Emi" //pegar o elemento do container.value
+  //     atualizarPosts(id, novoTexto);
+      
+  //   })
+  // });
 
   let deleteBtn = container.querySelectorAll(".deletebtn");
 
