@@ -68,32 +68,37 @@ export const feed = () => {
 
     //BOTÃO EDITAR
     let editBtns = viewPost.querySelectorAll(".edit-btn");
-  console.log(editBtns);
+    console.log(editBtns);
 
-  editBtns.forEach((editBtn) => {
-    editBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      console.log(e);
-      const id = e.target.parentNode.dataset.postid;
-      console.log(e.target.parentNode);
-      const novoTexto = "Novo texto Emi" //pegar o elemento do container.value
-      atualizarPosts(id, novoTexto);
-      
+    editBtns.forEach((editBtn) => {
+      editBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log(e);
+        const id = e.target.parentNode.dataset.postid;
+        console.log(e.target.parentNode);
+        const novoTexto = "Novo texto Emi" //pegar o elemento do container.value
+        atualizarPosts(id, novoTexto);
+
+      });
+
     });
 
-  });
+    //BOTÃO EXCLUIR POSTER
 
- //BOTÃO EXCLUIR POSTER
+    let deleteBtn = viewPost.querySelectorAll(".deletebtn");
 
- let deleteBtn = viewPost.querySelectorAll(".deletebtn");
+    deleteBtn.forEach((deleteBtn) => {
+      deleteBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const deleteOpt = confirm("Tem certeza que deseja mesmo excluir essa postagem?");
+        console.log(deleteOpt);
+        if (deleteOpt) {
+          const id = e.target.parentNode.dataset.postid;
+          deletePosts(id);
+        }
 
- deleteBtn.forEach((deleteBtn) => {
-   deleteBtn.addEventListener('click', (e) => {
-     e.preventDefault();
-     const id = e.target.parentNode.dataset.postid;
-     deletePosts(id);
-   });
- });
+      });
+    });
 
 
   });
@@ -116,7 +121,7 @@ export const feed = () => {
   //     const id = e.target.dataset.postid;
   //     const novoTexto = "Novo texto Emi" //pegar o elemento do container.value
   //     atualizarPosts(id, novoTexto);
-      
+
   //   })
   // });
 
