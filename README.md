@@ -97,8 +97,13 @@ Recebemos principalmente feedbacks positivos em relação à usabilidade, facili
 
 <img src="./src/Imagens/imgPrototipo/GREENMED.png" height="300"/>
 
-**PROTOTIPO MOBILE LOGIN
+
 <img src="./src/Imagens/imgPrototipo/TELA LOGADA - USUARIO.png" height="300"/>
+<img src="./src/Imagens/imgPrototipo/TELA CADASTRO.png" height="300"/>
+<img src="./src/Imagens/imgPrototipo/TELA CRIAR POSTAGEM.png" height="300"/>
+<img src="./src/Imagens/imgPrototipo/TELA INSERIR COMENTARIO.png" height="300"/>
+<img src="./src/Imagens/imgPrototipo/TELA NOTICIAS.png" height="300"/>
+
 
 
 
